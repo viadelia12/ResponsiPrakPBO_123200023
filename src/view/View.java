@@ -16,8 +16,7 @@ public class View extends JFrame{
     JButton btnTambah = new JButton("Tambah Barang");
     JButton btnLihat = new JButton("Lihat Barang");
 
-    
-    
+
     public View(){
         setSize(190, 150);
         setVisible(true);
@@ -32,5 +31,13 @@ public class View extends JFrame{
         lMainMenu.setBounds(50,10,120,20);
         btnTambah.setBounds(10, 40, 150, 20);
         btnLihat.setBounds(10, 80, 150, 20);
+    }
+    
+    public JButton getTambah(){
+        return btnTambah;
+    }
+    
+    public JButton getLihat(){
+        return btnLihat;
     }
 }

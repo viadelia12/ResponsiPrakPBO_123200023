@@ -18,13 +18,23 @@ public class BarangController {
     public BarangController(View tampilan){
         this.view = tampilan;
         
-        view.btnTambah().addActionListener(new ActionListener(){
+        view.getTambah().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae){
                 Model model = new Model();
                 View_Input input = new View_Input();
                 view.setVisible(false);
-                InputController inputcontroller = new InputController(input,model);
+                InputController inputcontroller = new InputController(model,input);
+            }
+        });
+        
+        view.getLihat().addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ae){
+                Model model = new Model();
+                View_Lihat read = new View_Lihat();
+                view.setVisible(false);
+                ReadController readcontroller = new ReadController(read,model);
             }
         });
     }

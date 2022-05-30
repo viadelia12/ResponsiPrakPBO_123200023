@@ -6,6 +6,7 @@
 package controller;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JOptionPane;
 import model.*;
 import view.*;
 
@@ -21,13 +22,31 @@ public class InputController {
         this.model = model;
         this.view_input = view_input;
         
-        view_input.bSubmit().addActionListener(new ActionListener() {
+        view_input.getSubmit().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {                               
                 model.InputBarang(view_input.getNama(),view_input.getMassa(),view_input.getHarga());   
                 View StartView=new View();
                 view_input.setVisible(false);
                 BarangController Start=new BarangController(StartView);
+            }
+        });
+        
+        view_input.getKembali().addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ae){
+                View view = new View();
+                view_input.setVisible(false);
+                BarangController Start = new BarangController(view);                
+            }
+        });
+        
+        view_input.getReset().addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ae){
+                view_input.fNama.setText("");
+                view_input.fMassa.setText("");
+                view_input.fHarga.setText("");
             }
         });
     }

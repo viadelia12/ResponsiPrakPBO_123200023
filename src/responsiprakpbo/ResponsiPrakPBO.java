@@ -5,6 +5,7 @@
  */
 package responsiprakpbo;
 import view.*;
+import controller.*;
 
 /**
  *
@@ -17,7 +18,7 @@ public class ResponsiPrakPBO {
      */
     public static void main(String[] args) {
         View view = new View();
-        View_Input view_input = new View_Input();
+        BarangController start = new BarangController(view);
     }
     
 }

@@ -13,11 +13,11 @@ import javax.swing.*;
 public class View_Input extends JFrame{
     JLabel lInput = new JLabel("Input Barang");
     JLabel lNama = new JLabel("Nama");
-    JTextField fNama = new JTextField();
+    public JTextField fNama = new JTextField();
     JLabel lMassa = new JLabel("Massa(gr)");
-    JTextField fMassa = new JTextField();
+    public JTextField fMassa = new JTextField();
     JLabel lHarga = new JLabel("Harga Satuan");
-    JTextField fHarga = new JTextField();
+    public JTextField fHarga = new JTextField();
     
     JButton bSubmit = new JButton("Submit");
     JButton bReset = new JButton("Reset");
@@ -25,6 +25,7 @@ public class View_Input extends JFrame{
     
     public View_Input(){
         setSize(340, 240);
+        setTitle("Input Barang");
         setVisible(true);
         setDefaultCloseOperation(3);
         setLocationRelativeTo(null);
@@ -66,5 +67,17 @@ public class View_Input extends JFrame{
     public double getHarga() {
         double harga=Double.parseDouble(fHarga.getText());                
         return harga;
+    }
+    
+    public JButton getSubmit(){
+        return bSubmit;
+    }
+    
+    public JButton getReset(){
+        return bReset;
+    }
+    
+    public JButton getKembali(){
+        return bKembali;
     }
 }
